@@ -3,8 +3,10 @@ public class PowerRecursive11 {
     static String series = "";
     static int calculatePower(int base, int pow) {
         if (pow==0) {
+            series += "1";
             return 1;
     } else {
+        series += base + "x";
             return base*calculatePower(base, pow-1);
         }
     }
@@ -14,7 +16,7 @@ public class PowerRecursive11 {
     int base = input11.nextInt();
     System.out.print("Input Power Number: ");
     int power = input11.nextInt();
-    System.out.println("Result of: " + base + " power "+ power + " = " + 
-    calculatePower(base, power));
+    int result = calculatePower(base, power);
+    System.out.println("Result of: " + base + " power " + power + " = " + series + " = " + result);
     }
 }
